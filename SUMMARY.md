@@ -34,11 +34,11 @@ While a Logistic Regression training script exists, it is **NOT integrated** int
 
 ## Summary Table
 
-| Method | Status | Accuracy | Used By | File Location |
-|--------|--------|----------|---------|---------------|
-| **XGBoost** | ✅ Primary/Default | ~53.7% | main.py, Flask app | `XGBoost_Runner.py` |
-| **Neural Network** | ✅ Alternative | ~55% | main.py (with -nn flag) | `NN_Runner.py` |
-| **Logistic Regression** | ❌ Not Integrated | Unknown | None | Training only |
+Method | Status | Accuracy | Used By | File Location
+-------|--------|----------|---------|---------------
+**XGBoost** | ✅ Primary/Default | ~53.7% | main.py, Flask app | `XGBoost_Runner.py`
+**Neural Network** | ✅ Alternative | ~55% | main.py (with -nn flag) | `NN_Runner.py`
+**Logistic Regression** | ❌ Not Integrated | Unknown | None | Training only
 
 ## Conclusion
 

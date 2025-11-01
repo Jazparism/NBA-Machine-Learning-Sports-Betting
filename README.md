@@ -19,7 +19,7 @@ This project supports multiple machine learning models for predictions:
 - **Neural Network** (Alternative) - Achieves ~55% accuracy
   - Can be used with `-nn` flag
   - Uses TensorFlow/Keras with fully connected layers
-  - Model file: `Models/NN_Models/Trained-Model-OU-*`
+  - Model file: `Models/NN_Models/Trained-Model-OU-1699315414.2268295` (timestamp may vary)
 
 **Note:** While a Logistic Regression training script exists (`src/Train-Models/Logistic_Regression_UO.py`), it is not currently integrated into the prediction pipeline. The primary method for over/under predictions is **XGBoost**, which is used by the Flask web app and recommended for general use.
 

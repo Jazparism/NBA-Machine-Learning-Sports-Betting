@@ -17,7 +17,7 @@ Model Details:
 - Objective: Multi-class classification (Under/Push/Over)
 - Features: Team statistics + over/under line
 - Dataset: 2012-24 seasons
-- Target Accuracy: ~53-55%
+- Target Accuracy: ~53.7%
 
 The model is trained 100 times with different train/test splits, and only the best 
 performing model is saved. This is the PRIMARY method used for over/under predictions
