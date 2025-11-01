@@ -6,6 +6,25 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report, accuracy_score
 from sklearn.model_selection import train_test_split
 
+"""
+Logistic Regression Over/Under Model Training Script
+
+This script trains a Logistic Regression model for predicting NBA game over/under outcomes.
+
+Model Details:
+- Algorithm: Logistic Regression (scikit-learn)
+- Objective: Multi-class classification (Under/Push/Over)
+- Features: Team statistics + over/under line
+- Dataset: 2012-23 seasons
+
+IMPORTANT: This model is NOT currently integrated into the prediction pipeline (main.py).
+It exists as an experimental/alternative approach but is not used by the Flask app or 
+command-line predictions. To use this model, additional integration work would be needed
+in the src/Predict/ directory.
+
+See MODELS.md for detailed documentation.
+"""
+
 dataset = "dataset_2012-23"
 con = sqlite3.connect("../../Data/dataset.sqlite")
 data = pd.read_sql_query(f"select * from \"{dataset}\"", con, index_col="index")

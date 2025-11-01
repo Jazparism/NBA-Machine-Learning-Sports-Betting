@@ -6,6 +6,25 @@ import pandas as pd
 import tensorflow as tf
 from keras.callbacks import TensorBoard, EarlyStopping, ModelCheckpoint
 
+"""
+Neural Network Over/Under Model Training Script
+
+This script trains a TensorFlow/Keras Neural Network model for predicting NBA game over/under outcomes.
+
+Model Details:
+- Framework: TensorFlow/Keras
+- Architecture: Flatten -> Dense(128, relu6) -> Dense(3, softmax)
+- Objective: Multi-class classification (Under/Push/Over)
+- Features: Normalized team statistics + over/under line
+- Dataset: 2012-24 seasons
+- Target Accuracy: ~55%
+
+This is an ALTERNATIVE method to XGBoost for over/under predictions.
+The Neural Network typically achieves slightly higher accuracy but requires more resources.
+
+See MODELS.md for detailed documentation.
+"""
+
 current_time = str(time.time())
 
 tensorboard = TensorBoard(log_dir='../../Logs/{}'.format(current_time))

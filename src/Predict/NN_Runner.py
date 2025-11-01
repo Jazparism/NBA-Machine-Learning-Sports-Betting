@@ -6,12 +6,30 @@ from keras.models import load_model
 from src.Utils import Expected_Value
 from src.Utils import Kelly_Criterion as kc
 
+"""
+Neural Network Prediction Runner
+
+This module loads and runs Neural Network (TensorFlow/Keras) models for NBA game predictions:
+- Money Line (ML) Model: Predicts which team will win (home or away)
+- Over/Under (OU) Model: Predicts whether the total score will be over, under, or push the line
+
+Neural Network is an alternative method to XGBoost. It typically achieves ~55% accuracy on OU predictions.
+See MODELS.md for detailed technical documentation.
+"""
+
 init()
 
 _model = None
 _ou_model = None
 
 def _load_models():
+    """
+    Lazy-load the Neural Network models to avoid loading them unnecessarily.
+    
+    Models loaded:
+    - ML Model: ~69% accuracy on money line predictions
+    - OU Model: ~55% accuracy on over/under predictions
+    """
     global _model, _ou_model
     if _model is None:
         _model = load_model('Models/NN_Models/Trained-Model-ML-1699315388.285516')
