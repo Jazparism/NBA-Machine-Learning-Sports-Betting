@@ -7,12 +7,27 @@ from colorama import Fore, Style, init, deinit
 from src.Utils import Expected_Value
 from src.Utils import Kelly_Criterion as kc
 
+"""
+XGBoost Prediction Runner
+
+This module loads and runs XGBoost models for NBA game predictions:
+- Money Line (ML) Model: Predicts which team will win (home or away)
+- Over/Under (OU) Model: Predicts whether the total score will be over, under, or push the line
+
+XGBoost is the primary/default method for predictions in this application.
+See MODELS.md for detailed technical documentation.
+"""
 
 # from src.Utils.Dictionaries import team_index_current
 # from src.Utils.tools import get_json_data, to_data_frame, get_todays_games_json, create_todays_games
 init()
+
+# Load pre-trained XGBoost models
+# ML Model: ~68.7% accuracy on money line predictions
 xgb_ml = xgb.Booster()
 xgb_ml.load_model('Models/XGBoost_Models/XGBoost_68.7%_ML-4.json')
+
+# OU Model: ~53.7% accuracy on over/under predictions
 xgb_uo = xgb.Booster()
 xgb_uo.load_model('Models/XGBoost_Models/XGBoost_53.7%_UO-9.json')
 

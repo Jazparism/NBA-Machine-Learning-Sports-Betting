@@ -7,6 +7,25 @@ from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 from tqdm import tqdm
 
+"""
+XGBoost Over/Under Model Training Script
+
+This script trains an XGBoost model for predicting NBA game over/under outcomes.
+
+Model Details:
+- Algorithm: XGBoost Gradient Boosting
+- Objective: Multi-class classification (Under/Push/Over)
+- Features: Team statistics + over/under line
+- Dataset: 2012-24 seasons
+- Target Accuracy: ~53-55%
+
+The model is trained 100 times with different train/test splits, and only the best 
+performing model is saved. This is the PRIMARY method used for over/under predictions
+in the application.
+
+See MODELS.md for detailed documentation.
+"""
+
 dataset = "dataset_2012-24_new"
 con = sqlite3.connect("../../Data/dataset.sqlite")
 data = pd.read_sql_query(f"select * from \"{dataset}\"", con, index_col="index")
